@@ -111,7 +111,7 @@ const JobsData = [
         jobtype: "Freelance",
         experience: "Mid Level",
         location: "Remote",
-        skills: ["SEO", "Content Marketing", "Google Analytics"],
+        skills: ["Content Marketing", "Google Analytics","SEO"],
         companyLogo: companyhubspot,
         postedData: "2024-08-02",
         jobLink: "https://www.hubspot.com/careers"
@@ -123,7 +123,7 @@ const JobsData = [
         jobtype: "Contract",
         experience: "Senior Level",
         location: "In-Office",
-        skills: ["Adobe Premiere", "After Effects", "Final Cut Pro"],
+        skills: ["After Effects", "Final Cut Pro", "Adobe Premiere"],
         companyLogo: companynetflix,
         postedData: "2024-08-08",
         jobLink: "https://jobs.netflix.com/"
@@ -135,7 +135,7 @@ const JobsData = [
         jobtype: "Temporary",
         experience: "Fresher",
         location: "In-Office",
-        skills: ["Typing", "Microsoft Office", "Attention to detail"],
+        skills: ["Microsoft Office", "Attention to detail","Typing"],
         companyLogo: companyinfosys,
         postedData: "2024-08-05",
         jobLink: "https://www.infosys.com/careers"
@@ -159,7 +159,7 @@ const JobsData = [
         jobtype: "Full Time",
         experience: "Mid Level",
         location: "In-Office",
-        skills: ["Data Analysis", "Business Strategy", "Excel"],
+        skills: ["Data Analysis", "Excel", "Business Strategy"],
         companyLogo: companyaccenture,
         postedData: "2024-08-09",
         jobLink: "https://www.accenture.com/us-en/careers"
@@ -195,7 +195,7 @@ const JobsData = [
         jobtype: "Full Time",
         experience: "Senior Level",
         location: "In-Office",
-        skills: ["Product Strategy", "Leadership", "Market Research"],
+        skills: ["Product Strategy", "Market Research", "Leadership"],
         companyLogo: companylinkedin,
         postedData: "2024-08-14",
         jobLink: "https://careers.linkedin.com/"
@@ -207,7 +207,7 @@ const JobsData = [
         jobtype: "Full Time",
         experience: "Junior",
         location: "Remote",
-        skills: ["Test Automation", "Selenium", "Bug Tracking"],
+        skills: [ "Selenium", "Bug Tracking","Test Automation"],
         companyLogo: companycognizont,
         postedData: "2024-08-15",
         jobLink: "https://www.cognizant.com/careers"
@@ -219,7 +219,7 @@ const JobsData = [
         jobtype: "Part Time",
         experience: "Mid Level",
         location: "Remote",
-        skills: ["SEO", "Google Analytics", "Keyword Research"],
+        skills: [ "Google Analytics", "Keyword Research","SEO"],
         companyLogo: companyMoz,
         postedData: "2024-08-16",
         jobLink: "https://moz.com/about/jobs"
