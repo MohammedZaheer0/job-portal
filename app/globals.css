@@ -59,6 +59,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -80,4 +84,19 @@
   animation: appear linear;
   animation-timeline: view();
   animation-range: entey 0% cover 40%;
+}
+.InterviewAI{
+  background: linear-gradient(to right, #00ADA2,#D4FBF0);
+}
+/* .footerbg{
+  background: linear-gradient(to right, Silver,Gray);
+} */
+
+.redirect{
+  transition: all 0.5;
+}
+@media only screen and (max-width:425px){
+  .InterviewAI{
+    background: linear-gradient(to bottom, #00ADA2,#D4FBF0);
+  }
 }

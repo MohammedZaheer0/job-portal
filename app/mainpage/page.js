@@ -1,26 +1,4 @@
 "use client";
-import companyamazon from "@/public/jobportalimage1.jpg";
-import companyapple from "@/public/jobportalimage5.png";
-import companyflipkart from "@/public/jobportalimage6.png";
-import companyadobe from "@/public/jobportalimage7.jpg";
-import companygoogle from "@/public/jobportalimage8.png";
-import companytcs from "@/public/jobportalimage9.jpg";
-import companysamsung from "@/public/jobportalimage10.png";
-import companyhubspot from "@/public/jobportalimage11.jpg";
-import companynetflix from "@/public/jobportalimage12.webp";
-import companyinfosys from "@/public/jobportalimage13.jpg";
-import companymicrosoft from "@/public/jobportalimage14.png";
-import companyaccenture from "@/public/jobportalimage15.png";
-import companyIBM from "@/public/jobportalimage16.jpg";
-import companyfacebook from "@/public/jobportalimage17.jpg";
-import companylinkedin from "@/public/jobportalimage18.jpg";
-import companycognizont from "@/public/jobportalimage19.jpg";
-import companyMoz from "@/public/jobportalimage20.png";
-import companysalesforce from "@/public/jobportalimage21.webp";
-import companyoracal from "@/public/jobportalimage22.jpg";
-import companycisco from "@/public/jobportalimage23.jpg";
-
-
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import JobCard from "../components/JobCard";
@@ -33,12 +11,12 @@ import JobsData from "../components/JobsData";
 import { useEffect, useState } from "react";
 import { collection, query,orderBy, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase.config";
+import InterviewAI from '@/public/jobportalimage25.png';
 
 const MainPage = () => {
   const [jobs, setJobs] = useState([]);
   const [customSearch,setCustomSearch] = useState(false);
 
-  const companyLogo = [companyamazon,companyapple,companyflipkart,companyadobe,companygoogle,companytcs,companysamsung,companyhubspot,companynetflix,companyinfosys,companymicrosoft,companyaccenture,companyIBM,companyfacebook,companylinkedin,companycognizont,companyMoz,companysalesforce,companyoracal,companycisco]
 
   const fetchJobs = async () => {
     setCustomSearch(false)
@@ -47,15 +25,12 @@ const MainPage = () => {
     const q = query(jobsRef, orderBy("postedData","desc"))
     const req = await getDocs(q);
     req.forEach((job) => {
-      // console.log(doc.id, " => ", doc.data());
       const jobData = job.data();
       const jobId = parseInt(job.id, 10); 
-      const  logoIndex = jobId % companyLogo.length;
       tempJobs.push({
         ...jobData,
         id: job.id,
         postedData: jobData.postedData.toDate(),
-        companyLogo: companyLogo[logoIndex],
       });
     });
 
@@ -117,12 +92,12 @@ const MainPage = () => {
     req.forEach((job) => {
       const jobData = job.data();
       const jobId = parseInt(job.id, 10); 
-      const logoIndex = jobId % companyLogo.length;
+      // const logoIndex = jobId % companyLogo.length;
       tempJobs.push({
         ...jobData,
         id: job.id,
         postedData: jobData.postedData.toDate(),
-        companyLogo: companyLogo[logoIndex],
+        // companyLogo: companyLogo[logoIndex],
       });
     });
   
@@ -216,6 +191,26 @@ const MainPage = () => {
             <JobCard key={job.id} {...job} />
           ))}
         </div>
+
+
+      <div className="InterviewAI text-white grid grid-cols-1 md:grid-cols-2 rounded-lg p-5 justify-between items-center my-10 w-[100%] md:w-[80%] mx-auto">
+          <div>
+                <h1 className="text-2xl my-2">Practice customised mock interviews with AI</h1>
+                <p className="text-1xl my-2">Your result will be visible only to you</p>
+                <button className="bg-cyan-600 px-6 py-3 rounded-full my-2 font-medium hover:bg-black transition-all">Start for free</button>
+          </div>
+          <div className="flex justify-end items-center my-5 md:my-0"> 
+              <Image
+                src={InterviewAI}
+                alt="InterviewAI"
+                height={180}
+                width={180}
+                priority
+              />
+          </div>
+      </div>
+
+
       </div>
     </>
   );

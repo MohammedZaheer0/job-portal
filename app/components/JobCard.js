@@ -4,13 +4,13 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const JobCard = ({ role, company, jobtype, experience, location, skills, companyLogo, postedData, jobLink }) => {
+const JobCard = ({ role, company, jobtype, experience, location, skills, postedData, jobLink }) => {
   const currentDate = dayjs();
   const jobPostedDate = dayjs(postedData);
   const differenceInDays = currentDate.diff(jobPostedDate, 'day');
 
   return (
-    <div className='my-2 md:my-3'>
+    <div className='my-2 md:my-3' id='jobcard'>
       <div className='md:h-[180px] h-[300px] overflow-hidden bg-zinc-200 rounded-md p-4 border-black shadow-lg hover:border-blue-500 hover:translate-y-[5px] flex flex-col md:flex-row md:justify-between justify-center items-center'>
         
         <div>
@@ -23,7 +23,7 @@ const JobCard = ({ role, company, jobtype, experience, location, skills, company
                 {jobtype} &#x2022; {experience} &#x2022; {location}
               </p>
             </div>
-            {companyLogo && (
+            {/* {companyLogo && (
               <Image 
                 src={companyLogo} 
                 alt={`${company} logo`} 
@@ -32,7 +32,7 @@ const JobCard = ({ role, company, jobtype, experience, location, skills, company
                 priority 
                 className='rounded-full block md:hidden'
               />
-            )}
+            )} */}
           </div>
 
           <div className='mt-5'>
@@ -61,7 +61,7 @@ const JobCard = ({ role, company, jobtype, experience, location, skills, company
         </div>
         
         <div className='my-4 md:my-1'>
-          {companyLogo && (
+          {/* {companyLogo && (
             <Image 
               src={companyLogo} 
               alt={`${company} logo`} 
@@ -70,17 +70,23 @@ const JobCard = ({ role, company, jobtype, experience, location, skills, company
               priority 
               className='rounded-full hidden md:block'
             />
-          )}
+          )} */}
+
+
           <div className='w-full grid grid-cols-2 md:grid-cols-1 items-center justify-between gap-10 md:gap-0'>
             <p className='md:mt-2 text-[14px]'>
-              Posted {differenceInDays > 1 ? `${differenceInDays} days` : `${differenceInDays} day`} ago
+              {/* Posted {differenceInDays > 1 ? `${differenceInDays} days` : `${differenceInDays} day`} ago */}
+              {differenceInDays === 0 ? 'Posted today'  : `Posted ${differenceInDays > 1 ? `${differenceInDays} days` : `${differenceInDays} day`} ago`}
             </p>
             <Link target='_black'  href={jobLink} className='w-full flex justify-end md:justify-start'>
               <button  className='md:mt-2 bg-black text-white px-5 py-1 rounded-lg hover:bg-cyan-600'>
                 Apply
               </button>
             </Link>
+            
           </div>
+
+
         </div>
       </div>
     </div>
